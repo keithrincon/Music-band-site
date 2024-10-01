@@ -437,6 +437,10 @@ Navbar
 ===============
 */
 /* add :not(.nav-logo) to img */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9); /* Adjust color and transparency */
+  transition: background 0.3s ease; /* Smooth transition */
+}
 
 .navbar {
   position: fixed;
