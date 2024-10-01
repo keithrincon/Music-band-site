@@ -4,7 +4,7 @@ import About from './components/About';
 import Shows from './components/Shows';
 import Tours from './components/Tours';
 import Footer from './components/Footer';
-import Quotes from './components/Quotes';
+import QuoteForm from './components/QuoteForm';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <About />
       <Shows />
       <Tours />
-      <Quotes />
+      <QuoteForm />
       <Footer />
     </>
   );
