@@ -11,9 +11,9 @@ function Hero() {
       </video>
       {/* Hero content */}
       <div className='hero-banner'>
-        <h1>la nueva novedad</h1>
-        <p>Listos pa cualquier evento</p>
-        <a href='#tours' className='btn hero-btn'>
+        {/* <h1>la nueva novedad</h1> */}
+        <h3>Listos pa cualquier evento</h3>
+        <a href='#quotes' className='btn hero-btn'>
           quotes
         </a>
       </div>

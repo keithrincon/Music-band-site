@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Title from './Title';
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -50,9 +51,9 @@ const QuoteForm = () => {
   };
 
   return (
-    <section className='quotes-section'>
+    <section className='quotes-section' id='quotes'>
       <div className='quotes-content'>
-        <h2>Request a Quote</h2>
+        <Title title='quotes' />
         <p>
           If you're interested in booking us for an event, please fill out the
           form below, and we'll get back to you with a cost estimate!

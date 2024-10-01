@@ -5,15 +5,6 @@ import PageLinks from './PageLinks';
 import SocialLink from './SocialLink';
 
 function Navbar() {
-  const handleScroll = () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 600) {
-      // Adjust this value based on your hero section height
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  };
   return (
     <nav className='navbar'>
       <div className='nav-center'>
