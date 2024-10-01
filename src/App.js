@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Services from './components/Services';
+import Shows from './components/Shows';
 import Tours from './components/Tours';
 import Footer from './components/Footer';
+import Quotes from './components/Quotes';
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Services />
+      <Shows />
       <Tours />
+      <Quotes />
       <Footer />
     </>
   );

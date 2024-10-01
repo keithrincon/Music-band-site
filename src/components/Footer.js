@@ -14,8 +14,8 @@ function Footer() {
         })}
       </ul>
       <p className='copyright'>
-        copyright &copy; Backroads travel tours company
-        <span id='date'>{new Date().getFullYear()}</span> all rights reserved
+        La Nueva Nuevedad &copy;
+        <span id='date'>{new Date().getFullYear()}</span>
       </p>
     </footer>
   );

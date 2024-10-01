@@ -172,20 +172,38 @@ Hero
 */
 
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 4rem); /* Subtract the navbar height */
   background: var(--clr-primary-5);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
+
+.hero-video {
+  position: absolute; /* Positions the video relative to the .hero */
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire area */
+  transform: translate(-50%, -50%); /* Centers the video */
+  z-index: 0; /* -1 Keeps the video behind the content */
+}
+
 .hero-banner {
   text-align: center;
   color: var(--clr-white);
   padding: 0 3rem;
+  position: relative; /* Ensure the content is on top of the video */
+  z-index: 1; /* Make sure it appears above the video */
 }
+
 .hero-banner h1 {
   text-transform: uppercase;
 }
+
 .hero-banner p {
   max-width: 35rem;
   margin-left: auto;
@@ -193,25 +211,30 @@ Hero
   color: var(--clr-white);
   letter-spacing: var(--spacing);
 }
+
 .hero-btn {
   padding: 0.9rem 1.6rem;
   font-size: 1.25rem;
   background: var(--clr-white);
   color: var(--clr-primary-5);
 }
+
 .hero-btn:hover {
   background: transparent;
-  color: var(--clr-white);
-  border-color: var(--clr-white);
+  color: var(--white);
+  border-color: var(--white);
 }
+
 @media screen and (min-width: 768px) {
+  /* Remove the background property since we're using a video now */
   .hero {
-    background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
-      url('./images/main.jpeg') center/cover no-repeat;
+    /* The video will take the place of the background */
   }
+
   .hero-banner {
     padding: 0;
   }
+
   .hero-banner p {
     max-width: 45rem;
   }
@@ -318,73 +341,36 @@ Services
 
 /*
 =============== 
-Featured Tours
+bts
 ===============
 */
 
-.tour-card {
+.bts-card {
   transition: var(--transition);
   background: var(--clr-grey-10);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
 }
-.tour-card:hover {
+.bts-card:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
 }
-.tour-img-container {
+
+.bts-video-container {
   position: relative;
+  width: 100%; /* Ensure it adapts to the container width */
+  padding-top: 177.78%; /* 9:16 aspect ratio (height/width * 100%) */
 }
-.tour-img {
-  height: 15rem;
+
+.bts-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-.tour-date {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background: var(--clr-primary-8);
-  color: var(--clr-primary-1);
-  text-transform: capitalize;
-  padding: 0.25rem 0.5rem;
-  margin-bottom: 0;
-}
-.tour-info {
-  padding: 1.25rem 1.5rem;
-}
-/* additional css for different layout*/
-.tour-title {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.tour-title p,
-.tour-title h4 {
-  margin-bottom: 0.75rem;
-  line-height: 1.25;
-}
-.tour-title p {
-  color: var(--clr-grey-7);
-}
-/* end of additional css for different layout*/
-.tour-footer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.tour-footer p {
-  line-height: 0;
-  margin-bottom: 0;
-  text-transform: capitalize;
-  color: var(--clr-primary-5);
-}
-.tour-footer p span {
-  margin-right: 0.25rem;
-}
-.tour-btn {
-  text-align: center;
-}
+
 @media screen and (min-width: 768px) {
   .featured-center {
     display: grid;
@@ -392,12 +378,12 @@ Featured Tours
     gap: 2rem;
   }
 }
+
 @media screen and (min-width: 1170px) {
   .featured-center {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-
 /*
 =============== 
 Footer
@@ -456,7 +442,7 @@ Navbar
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--clr-white);
+  background: transparent;
   box-shadow: var(--dark-shadow);
   z-index: 2;
   height: 4rem;
@@ -557,4 +543,75 @@ Navbar
   .nav-icon:hover {
     color: var(--clr-primary-8);
   }
+}
+
+/* quotes section */
+.quotes-section {
+  background-color: var(--clr-grey-10);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quotes-content h2 {
+  font-size: 2rem;
+}
+
+.quotes-content p {
+  margin-bottom: 1rem;
+}
+
+.quotes-link {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--clr-primary-5);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.quotes-link:hover {
+  background-color: var(--clr-primary-7);
+}
+
+.booking-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--clr-grey-10);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h2 {
+  margin-bottom: 1rem;
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--clr-grey-5);
+  border-radius: 5px;
+}
+
+.booking-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--clr-primary-5);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.booking-form button:hover {
+  background-color: var(--clr-primary-7);
 }

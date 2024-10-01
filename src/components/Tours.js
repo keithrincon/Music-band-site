@@ -1,15 +1,16 @@
 import React from 'react';
 import Title from './Title';
-import { tours } from '../data';
-import Tour from './Tour';
+import { bts } from '../data';
+import Bts from './Bts';
 
 function Tours() {
   return (
-    <section className='section' id='tours'>
-      <Title title='featured' subTitle='tours' />
+    <section className='section' id='bts'>
+      {/* <Title title='featured' subTitle='tours' /> */}
+      <Title title='BTS' />
       <div className='section-center featured-center'>
-        {tours.map((tour) => {
-          return <Tour key={tour.id} {...tour} />;
+        {bts.map((bts) => {
+          return <Bts key={bts.id} {...bts} />;
         })}
       </div>
     </section>

@@ -1,84 +1,97 @@
-import tour1 from './images/tour-1.jpeg';
-import tour2 from './images/tour-2.jpeg';
-import tour3 from './images/tour-3.jpeg';
-import tour4 from './images/tour-4.jpeg';
+import bts1 from './images/bts-1.mp4';
+import bts2 from './images/bts-2.mp4';
+import bts3 from './images/bts-3.mp4';
+import bts4 from './images/bts-4.mp4';
 
 export const pageLinks = [
-  { id: 1, href: '#home', text: 'home' },
-  { id: 2, href: '#about', text: 'about' },
-  { id: 3, href: '#services', text: 'services' },
-  { id: 4, href: '#tours', text: 'tours' },
+  { id: 1, href: '#shows', text: 'SHOWS' },
+  { id: 2, href: '#bts', text: 'BTS' },
+  { id: 3, href: '#quotes', text: 'QUOTES' },
 ];
 
 export const socialLinks = [
-  { id: 1, href: 'https://www.twitter.com', icon: 'fab fa-facebook' },
-  { id: 2, href: 'https://www.twitter.com', icon: 'fab fa-twitter' },
-  { id: 3, href: 'https://www.twitter.com', icon: 'fab fa-squarespace' },
-];
-
-export const services = [
   {
     id: 1,
-    icon: 'fas fa-wallet fa-fw',
-    title: 'saving money',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.',
+    href: 'https://www.instagram.com/la_nuevanovedad/',
+    icon: 'fab fa-instagram',
   },
   {
     id: 2,
-    icon: 'fas fa-tree fa-fw',
-    title: 'endless hiking',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.',
+    href: 'https://www.tiktok.com/@la.nuevanovedad',
+    icon: 'fab fa-tiktok',
   },
   {
     id: 3,
-    icon: 'fas fa-socks fa-fw',
-    title: 'amazing comfort',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.',
-  },
-];
-
-export const tours = [
-  {
-    id: 1,
-    image: tour1,
-    date: 'august 26th, 2020',
-    title: 'Tibet Adventure',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-    icon: 'fas fa-map',
-    location: 'china',
-    duration: 6,
-    cost: 2100,
-  },
-  {
-    id: 2,
-    image: tour2,
-    date: 'october 1th, 2020',
-    title: 'best of java',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-    icon: 'fas fa-map',
-    location: 'china',
-    duration: 11,
-    cost: 1400,
-  },
-  {
-    id: 3,
-    image: tour3,
-    date: 'september 15th, 2020',
-    title: 'explore hong kong',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-    location: 'hong kong',
-    duration: 8,
-    cost: 5000,
+    href: 'https://www.facebook.com/profile.php?id=61565566564808',
+    icon: 'fab fa-facebook',
   },
   {
     id: 4,
-    image: tour4,
-    date: 'december 5th, 2019',
-    title: 'kenya highlights',
-    info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-    icon: 'fas fa-map',
-    location: 'kenya',
-    duration: 20,
-    cost: 33000,
+    href: 'https://www.youtube.com/@LaNuevaNovedad',
+    icon: 'fab fa-youtube',
+  },
+];
+
+export const shows = [
+  {
+    id: 1,
+    date: 'October 4',
+    venue: 'El Taco Boom',
+    location: 'Everett, WA',
+    cover: 'Cover: $20',
+  },
+  {
+    id: 1,
+    date: 'October 11',
+    venue: 'El Taco Boom',
+    location: 'Everett, WA',
+    cover: 'Cover: $20',
+  },
+  {
+    id: 1,
+    date: 'October 18',
+    venue: 'El Taco Boom',
+    location: 'Everett, WA',
+    cover: 'Cover: $20',
+  },
+  {
+    id: 1,
+    date: 'October 25',
+    venue: 'El Taco Boom',
+    location: 'Everett, WA',
+    cover: 'Cover: $20',
+  },
+  {
+    id: 1,
+    date: 'November 1',
+    venue: 'El Taco Boom',
+    location: 'Everett, WA',
+    cover: 'Cover: $20',
+  },
+  {
+    id: 1,
+    date: 'November 8',
+    venue: 'El Taco Boom',
+    location: 'Everett, WA',
+    cover: 'Cover: $20',
+  },
+];
+
+export const bts = [
+  {
+    id: 1,
+    video: bts1,
+  },
+  {
+    id: 2,
+    video: bts2,
+  },
+  {
+    id: 3,
+    video: bts3,
+  },
+  {
+    id: 4,
+    video: bts4,
   },
 ];
