@@ -227,11 +227,6 @@ Hero
 }
 
 @media screen and (min-width: 768px) {
-  /* Remove the background property since we're using a video now */
-  .hero {
-    /* The video will take the place of the background */
-  }
-
   .hero-banner {
     padding: 0;
   }
@@ -436,8 +431,6 @@ Footer
 Navbar
 ===============
 */
-
-/* Add :not(.nav-logo) to img */
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.9); /* Adjust color and transparency */
   transition: background 0.3s ease; /* Smooth transition */
@@ -459,11 +452,11 @@ Navbar
 
 /* Navbar Social Icons */
 .nav-icons {
-  display: none; /* Hidden by default for larger screens */
+  display: none; /* Hide by default */
   position: absolute; /* Positioning for smaller screens */
   top: 4rem; /* Position below the navbar */
   right: 1rem; /* Align to the right */
-  background: tran; /* Slightly transparent background for mobile */
+  background: transparent; /* Slightly transparent background for mobile */
   padding: 1rem; /* Spacing around icons */
   box-shadow: var(--dark-shadow); /* Shadow for a better look */
   border-radius: var(--radius); /* Rounded corners */
@@ -484,20 +477,19 @@ Navbar
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--clr-primary-4);
 }
 
-.nav-toggle {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 1.5rem;
-  color: var(--clr-primary-5);
-  cursor: pointer;
-  transition: var(--transition);
+.follow-us {
+  display: none; /* Default to hidden */
+  cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+  color: var(--clr-primary-5); /* Color of the "Follow Us" text */
+  font-size: 1.2rem; /* Size of the text */
+  transition: color 0.3s; /* Smooth color transition */
 }
 
-.nav-toggle:hover {
-  transform: scale(1.2);
+.follow-us:hover {
+  color: var(--clr-primary-1); /* Change color on hover */
 }
 
 .nav-link {
@@ -508,7 +500,8 @@ Navbar
   transition: var(--transition);
   color: var(--clr-grey-1);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  color: var(--clr-primary-4);
 }
 
 .nav-link:hover {
@@ -517,7 +510,7 @@ Navbar
   padding-left: 2.25rem;
 }
 
-/* Nav toggle functionality */
+/* nav toggle functionality */
 .nav-links {
   height: 0;
   overflow: hidden;
@@ -525,7 +518,7 @@ Navbar
 }
 
 .show-links {
-  height: 280px; /* Adjust height as needed */
+  height: 280px; /* Adjust height as necessary */
 }
 
 /* Styling for the icons */
@@ -533,47 +526,40 @@ Navbar
   margin: 0.5rem 0; /* Space between icons */
   color: var(--clr-primary-5); /* Icon color */
   transition: color 0.3s; /* Smooth color transition */
-  font-size: 1.5rem; /* Increase icon size */
 }
 
 .nav-icon:hover {
   color: var(--clr-primary-1); /* Change color on hover */
 }
 
-/* Media Queries */
 @media screen and (min-width: 992px) {
-  /* Hide nav toggle button */
+  /* hide nav toggle button */
   .nav-toggle {
     display: none;
   }
-
-  /* Show links */
+  /* show links */
   .nav-links {
-    height: auto; /* Always show links on larger screens */
-    display: flex; /* Flex layout for links */
+    height: auto;
+    display: flex;
   }
-
   .nav-center {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Optional */
+    /* optional */
+    flex-wrap: wrap;
   }
-
   .nav-header {
-    padding: 0; /* Reset padding */
+    padding: 0 0;
   }
-
   .nav-link {
-    padding: 0; /* Reset padding for links */
+    padding: 0 0;
   }
-
   .nav-link:hover {
-    padding: 0; /* Reset padding on hover */
+    padding: 0;
     color: var(--clr-primary-5);
-    background: transparent; /* Ensure background is transparent */
+    background: transparent;
   }
-
   .nav-icons {
     display: flex; /* Always display on wide screens */
     position: static; /* Reset positioning */
@@ -585,18 +571,43 @@ Navbar
   }
 
   .nav-link {
-    margin-right: 0.7rem; /* Space between nav links */
+    margin-right: 0.7rem;
   }
-
   .nav-icon {
-    margin-right: 0.7rem; /* Space between social icons */
-    font-size: 1.5rem; /* Increase icon size */
+    margin-right: 0.7rem;
+    color: var(--clr-primary-5);
+    font-size: 1.5rem; /* Increase size of icons */
     transition: var(--transition);
-    margin: 0 1rem; /* Reset margin */
+    margin: 0 1rem;
   }
-
   .nav-icon:hover {
-    color: var(--clr-primary-8); /* Change color on hover */
+    color: var(--clr-primary-8);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .follow-us {
+    background-color: var(--clr-primary-5); /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 50%; /* Make it a circle */
+    padding: 0.5rem 1rem; /* Adjust padding for size */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth background and color transition */
+    z-index: 2; /* Ensure it's above other elements */
+    font-family: 'Roboto Serif';
+  }
+  .follow-us:hover {
+    background-color: var(--clr-primary-1); /* Change background on hover */
+    color: var(--clr-primary-5); /* Change text color on hover */
+  }
+  .nav-icons {
+    font-size: 2rem;
+    margin-right: 1.5rem;
   }
 }
 

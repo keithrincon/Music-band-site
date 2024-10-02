@@ -26,18 +26,11 @@ function Navbar() {
       <div className='nav-center'>
         <div className='nav-header'>
           <h2>Novedad</h2>
-          {/* Hamburger Icon */}
-          <button
-            type='button'
-            className='nav-toggle'
-            id='nav-toggle'
-            onClick={toggleLinks}
-          >
-            <i className='fas fa-bars'></i>
+          <button type='button' className='follow-us' onClick={toggleLinks}>
+            Follow Us
           </button>
         </div>
 
-        {/* Page Links */}
         <PageLinks parentClass='nav-links' itemClass='nav-link' />
 
         {/* Show social icons only when showLinks is true */}
