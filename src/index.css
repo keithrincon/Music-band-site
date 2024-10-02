@@ -436,7 +436,8 @@ Footer
 Navbar
 ===============
 */
-/* add :not(.nav-logo) to img */
+
+/* Add :not(.nav-logo) to img */
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.9); /* Adjust color and transparency */
   transition: background 0.3s ease; /* Smooth transition */
@@ -447,26 +448,44 @@ Navbar
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent;
+  background: transparent; /* Keep it transparent for now */
   box-shadow: var(--dark-shadow);
   z-index: 2;
   height: 4rem;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Ensure space between items */
 }
+
+/* Navbar Social Icons */
 .nav-icons {
-  display: none;
+  display: none; /* Hidden by default for larger screens */
+  position: absolute; /* Positioning for smaller screens */
+  top: 4rem; /* Position below the navbar */
+  right: 1rem; /* Align to the right */
+  background: tran; /* Slightly transparent background for mobile */
+  padding: 1rem; /* Spacing around icons */
+  box-shadow: var(--dark-shadow); /* Shadow for a better look */
+  border-radius: var(--radius); /* Rounded corners */
+  flex-direction: column; /* Align icons vertically */
 }
+
+.show-icons {
+  display: flex; /* Show when toggled */
+}
+
 .nav-center {
   width: 90vw;
   max-width: 1170px;
   margin: 0 auto;
 }
+
 .nav-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .nav-toggle {
   background: transparent;
   border: none;
@@ -476,9 +495,11 @@ Navbar
   cursor: pointer;
   transition: var(--transition);
 }
+
 .nav-toggle:hover {
   transform: scale(1.2);
 }
+
 .nav-link {
   display: block;
   padding: 1rem 2rem;
@@ -489,64 +510,93 @@ Navbar
   cursor: pointer;
   font-size: 1rem;
 }
+
 .nav-link:hover {
   color: var(--clr-primary-1);
   background: var(--clr-primary-8);
   padding-left: 2.25rem;
 }
-/* nav toggle functionality */
+
+/* Nav toggle functionality */
 .nav-links {
   height: 0;
   overflow: hidden;
   transition: var(--transition);
 }
+
 .show-links {
-  height: 280px;
+  height: 280px; /* Adjust height as needed */
 }
-/* nav at bigger screen size */
+
+/* Styling for the icons */
+.nav-icon {
+  margin: 0.5rem 0; /* Space between icons */
+  color: var(--clr-primary-5); /* Icon color */
+  transition: color 0.3s; /* Smooth color transition */
+  font-size: 1.5rem; /* Increase icon size */
+}
+
+.nav-icon:hover {
+  color: var(--clr-primary-1); /* Change color on hover */
+}
+
+/* Media Queries */
 @media screen and (min-width: 992px) {
-  /* hide nav toggle button */
+  /* Hide nav toggle button */
   .nav-toggle {
     display: none;
   }
-  /* show links */
+
+  /* Show links */
   .nav-links {
-    height: auto;
-    display: flex;
+    height: auto; /* Always show links on larger screens */
+    display: flex; /* Flex layout for links */
   }
+
   .nav-center {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* optional */
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Optional */
   }
+
   .nav-header {
-    padding: 0 0;
-  }
-  .nav-link {
-    padding: 0 0;
-  }
-  .nav-link:hover {
-    padding: 0;
-    color: var(--clr-primary-5);
-    background: transparent;
-  }
-  .nav-icons {
-    display: flex;
+    padding: 0; /* Reset padding */
   }
 
   .nav-link {
-    margin-right: 0.7rem;
+    padding: 0; /* Reset padding for links */
   }
-  .nav-icon {
-    margin-right: 0.7rem;
+
+  .nav-link:hover {
+    padding: 0; /* Reset padding on hover */
     color: var(--clr-primary-5);
-    font-size: 1.2rem;
-    transition: var(--transition);
+    background: transparent; /* Ensure background is transparent */
   }
+
+  .nav-icons {
+    display: flex; /* Always display on wide screens */
+    position: static; /* Reset positioning */
+    top: auto; /* Reset top */
+    right: auto; /* Reset right */
+    background: transparent; /* Make background transparent on larger screens */
+    box-shadow: none; /* Remove shadow on larger screens */
+    flex-direction: row; /* Align icons horizontally */
+  }
+
+  .nav-link {
+    margin-right: 0.7rem; /* Space between nav links */
+  }
+
+  .nav-icon {
+    margin-right: 0.7rem; /* Space between social icons */
+    font-size: 1.5rem; /* Increase icon size */
+    transition: var(--transition);
+    margin: 0 1rem; /* Reset margin */
+  }
+
   .nav-icon:hover {
-    color: var(--clr-primary-8);
+    color: var(--clr-primary-8); /* Change color on hover */
   }
 }
 
